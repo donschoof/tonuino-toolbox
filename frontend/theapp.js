@@ -101,6 +101,11 @@ let theapp = {
         remove_folder.init();
 
         /*
+         * RFID Karte programmieren Button
+         */
+        program_rfid.init();
+
+        /*
          * link zur website
          */
         about_link.init();
@@ -202,10 +207,12 @@ let theapp = {
         if(folder) {
             theapp.$btn_group_right.show();
             folder_list.$btn_remove_folder.show();
+            folder_list.$btn_program_rfid.show();
         }
         else {
             theapp.$btn_group_right.hide();
             folder_list.$btn_remove_folder.hide();
+            folder_list.$btn_program_rfid.hide();
         }
     },
 

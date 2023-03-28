@@ -8,6 +8,7 @@ window.folder_list = require('./ui/folder_list');
 window.new_folder = require('./ui/new_folder');
 window.purge = require('./ui/purge');
 window.remove_folder = require('./ui/remove_folder');
+window.program_rfid = require('./ui/program_rfid');
 window.track_table = require('./ui/track_table');
 window.window_actions = require('./ui/window_actions');
 window.theapp = require('./theapp');

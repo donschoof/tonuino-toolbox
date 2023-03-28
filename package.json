@@ -37,6 +37,7 @@
     "node-id3": "^0.1.21",
     "pretty-logger": "^0.1.2",
     "rimraf": "^3.0.2",
+    "serialport": "^10.5.0",
     "tmp": "^0.2.1"
   },
   "repository": {
