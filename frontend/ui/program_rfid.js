@@ -1,5 +1,3 @@
-const { dialog } = require("electron");
-
 let program_rfid = {
     $btn: null,
     init: () => {
@@ -10,8 +8,8 @@ let program_rfid = {
 
             dialog.open({
                 title: theapp.folder.folder_name + ' programmieren',
-                message: 'Möchtest du für den Ordner eine RFID-Karte beschreiben?',
-                detail: 'Möchtest Du für den Ordner ' + theapp.folder.folder_name + ' eine RFID Karte programmieren?',
+                message: 'Möchtest Du für den Ordner ' + theapp.folder.folder_name + ' eine RFID Karte programmieren?',
+                detail: 'Wiedergabemodus kannst du im folgenden Dialog auswählen',
                 buttons: ['Nein', 'Ja']
             }, (response) => {
 
