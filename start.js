@@ -1,6 +1,6 @@
 const path = require('path');
 const { app, BrowserWindow, ipcMain, protocol, dialog, globalShortcut, Menu } = require('electron');
-const { autoUpdater } = require('electron-updater');
+//const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
 const template = require('./menu');
 const pLogger = require('pretty-logger');
@@ -198,7 +198,7 @@ const createWindowDialog = () => {
 
 };
 
-const initAutoUpdater = () => {
+/* const initAutoUpdater = () => {
 
   ipcMain.on('restart-app', () => {
     autoUpdater.quitAndInstall();
@@ -222,7 +222,7 @@ const initAutoUpdater = () => {
     }, 5000);
   });
 
-};
+}; */
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -231,7 +231,7 @@ app.on('ready', () => {
   registerProtocols();
   createWindow();
   createWindowDialog();
-  initAutoUpdater();
+ // initAutoUpdater();
   setMainMenu();
 
   globalShortcut.register('Control+Shift+I', () => {
