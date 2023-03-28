@@ -34,7 +34,7 @@ Um am Projekt mit zu wirken klone das Repository, auf Deinem rechner muss git un
 
 ```bash
 # Repo klonen
-git clone https://github.com/raph-ael/tonuino-toolkit.git
+git clone https://github.com/donschoof/tonuino-toolbox.git
 
 # ins Verzeichnis wechseln
 cd tonuino-toolkit
@@ -55,6 +55,7 @@ npm start
 ## Authors
 
 * [Raphael Wintrich](https://github.com/raph-ael) ([geldfrei.net](https://geldfrei.net)) - initial Work
+* [David Schäfer](https://github.com/donschoof) - Update & RFID Extention
 
 ## License
 
@@ -62,5 +63,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Support the Hackers
 
-<a href="https://www.buymeacoffee.com/geldfrei" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Kauf mir einen KAffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/geldfrei" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Kauf mir einen Kaffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
