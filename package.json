@@ -1,7 +1,7 @@
 {
-  "name": "tonuino-toolbox",
-  "version": "1.1.9",
-  "description": "Organisiere Deine Tonuino SD-Karte ohne Stress :)",
+  "name": "tonuino-toolbox-nfc",
+  "version": "1.2.0",
+  "description": "Organisiere Deine Tonuino SD-Karte und programmiere deine Karten ohne Stress :)",
   "main": "start.js",
   "scripts": {
     "start": "electron .",
@@ -14,6 +14,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
+  "contributors": [
+    {
+      "name": "David Schäfer"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "electron": "^9.4.4",
