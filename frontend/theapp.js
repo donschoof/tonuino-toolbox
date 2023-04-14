@@ -101,9 +101,9 @@ let theapp = {
         remove_folder.init();
 
         /*
-         * RFID Karte programmieren Button
+         * NFC Karte programmieren Button
          */
-        program_rfid.init();
+        program_nfc.init();
 
         /*
          * link zur website
@@ -207,12 +207,12 @@ let theapp = {
         if(folder) {
             theapp.$btn_group_right.show();
             folder_list.$btn_remove_folder.show();
-            folder_list.$btn_program_rfid.show();
+            folder_list.$btn_program_nfc.show();
         }
         else {
             theapp.$btn_group_right.hide();
             folder_list.$btn_remove_folder.hide();
-            folder_list.$btn_program_rfid.hide();
+            folder_list.$btn_program_nfc.hide();
         }
     },
 

@@ -1,14 +1,14 @@
-let program_rfid = {
+let program_nfc = {
     $btn: null,
     init: () => {
 
-        program_rfid.$btn = $('#btn-program-rfid');
+        program_nfc.$btn = $('#btn-program-nfc');
 
-        program_rfid.$btn.click(() => {
+        program_nfc.$btn.click(() => {
 
             dialog.open({
                 title: theapp.folder.folder_name + ' programmieren',
-                message: 'Möchtest Du für den Ordner ' + theapp.folder.folder_name + ' eine RFID Karte programmieren?',
+                message: 'Möchtest Du für den Ordner ' + theapp.folder.folder_name + ' eine NFC Karte programmieren?',
                 detail: 'Wiedergabemodus kannst du im folgenden Dialog auswählen',
                 buttons: ['Nein', 'Ja']
             }, (response) => {
@@ -24,4 +24,4 @@ let program_rfid = {
     }
 };
 
-module.exports = program_rfid;
+module.exports = program_nfc;

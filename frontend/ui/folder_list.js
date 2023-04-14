@@ -4,12 +4,12 @@ let folder_list = {
 
     $list: null,
     $btn_remove_folder: null,
-    $btn_program_rfid: null,
+    $btn_program_nfc: null,
 
     init: () => {
         folder_list.$list = $('#folder-list');
         folder_list.$btn_remove_folder = $('#btn-remove-folder');
-        folder_list.$btn_program_rfid = $('#btn-program-rfid');
+        folder_list.$btn_program_nfc = $('#btn-program-nfc');
         folder_list.setTitle('Ordner');
     },
 
