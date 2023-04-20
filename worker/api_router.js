@@ -1,4 +1,5 @@
 const filesystem = require("./filesystem");
+const serial = require("./serial");
 const electron = require('electron');
 const { ipcRenderer } = require('electron');
 const devices = require("./devices");
@@ -40,6 +41,12 @@ let api_router = {
 
         callback(drives);
 
+    },
+
+    list_serial_ports: async (params, callback) => {
+        let serialports = await serial.list();
+        
+        callback(serialports);
     },
 
     list_all: async (params, callback) => {

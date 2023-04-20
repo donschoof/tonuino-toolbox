@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const {ipcRenderer} = require('electron');
 const electron = require('electron');
 const logger = require('../logger');
 
@@ -9,6 +9,7 @@ let theapp = {
     $pane_main: null,
     $pane_main_loader: null,
     device: null,
+    serialPort: null,
     folder: null,
     $btn_group_right: null,
     $btn_group_folder_opt: null,
@@ -106,6 +107,11 @@ let theapp = {
         program_nfc.init();
 
         /*
+        * Serial Ports auswahl
+        */
+        serial_select.init();
+
+        /*
          * link zur website
          */
         about_link.init();
@@ -155,14 +161,16 @@ let theapp = {
 
     setDevice: (device) => {
         theapp.device = device;
-        if(device) {
+        if (device) {
             theapp.$btn_group_folder_opt.show();
-        }
-        else {
+        } else {
             theapp.$btn_group_folder_opt.hide();
         }
     },
 
+    setSerialPort: (serialPort) => {
+        theapp.serialPort = serialPort;
+    },
 
     reload: (callback) => {
         theapp.showMainLoader();
@@ -173,20 +181,21 @@ let theapp = {
             success: (folder) => {
                 folder_list.setFolders(folder);
                 theapp.hideMainLoader();
-                if(callback !== undefined) {
+                if (callback !== undefined) {
                     callback();
                 }
 
                 device_select.reload();
+                serial_select.reload();
 
             }
         });
     },
 
-    updateFileProperty: (file_path, tag_data) =>{
+    updateFileProperty: (file_path, tag_data) => {
 
         theapp.folder.title.forEach((file) => {
-            if(file.path === file_path) {
+            if (file.path === file_path) {
                 logger.log('update data!!');
                 logger.log(tag_data);
                 logger.log(file);
@@ -204,12 +213,11 @@ let theapp = {
     setFolder: (folder) => {
         theapp.folder = folder;
         track_table.setFolder(folder);
-        if(folder) {
+        if (folder) {
             theapp.$btn_group_right.show();
             folder_list.$btn_remove_folder.show();
             folder_list.$btn_program_nfc.show();
-        }
-        else {
+        } else {
             theapp.$btn_group_right.hide();
             folder_list.$btn_remove_folder.hide();
             folder_list.$btn_program_nfc.hide();
@@ -217,7 +225,7 @@ let theapp = {
     },
 
     setMp3sForFolder: (mp3s) => {
-        if(theapp.folder) {
+        if (theapp.folder) {
             theapp.folder.title = mp3s;
         }
     }

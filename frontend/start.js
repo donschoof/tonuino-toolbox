@@ -3,6 +3,7 @@ window.dialog = require('./dialog');
 window.about_link = require('./ui/about_link');
 window.add_files = require('./ui/add_files');
 window.device_select = require('./ui/device_select');
+window.serial_select = require('./ui/serial_select');
 window.dropdowns = require('./ui/dropdowns');
 window.folder_list = require('./ui/folder_list');
 window.new_folder = require('./ui/new_folder');
