@@ -1,7 +1,7 @@
 const filesystem = require("./filesystem");
 const serial = require("./serial");
 const electron = require('electron');
-const { ipcRenderer } = require('electron');
+const {ipcRenderer} = require('electron');
 const devices = require("./devices");
 const path = require('path');
 const mp3_id3_editor = require('./mp3_id3_editor');
@@ -13,7 +13,7 @@ let api_router = {
 
         ipcRenderer.on('command-from-window', (event, arg) => {
 
-            if(api_router[arg.command] !== undefined) {
+            if (api_router[arg.command] !== undefined) {
 
                 api_router[arg.command](arg.params, (answer) => {
 
@@ -45,7 +45,7 @@ let api_router = {
 
     list_serial_ports: async (params, callback) => {
         let serialports = await serial.list();
-        
+
         callback(serialports);
     },
 
@@ -54,6 +54,14 @@ let api_router = {
         let folders_and_files = await devices.listAll(params.drive);
 
         callback(folders_and_files);
+
+    },
+
+    serial_program_nfc_card: async (params, callback) => {
+
+       let success = await serial.program_nfc_card(params.serialport, params.folder.folder_name, params.mode);
+
+        callback(success);
 
     },
 

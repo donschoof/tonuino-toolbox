@@ -55,7 +55,6 @@ let serial_select = {
                         serial_select.setPort(serialPort);
 
                         theapp.setSerialPort(serialPort);
-                        theapp.reload();
                     });
 
                     serial_select.$list.append($li);
