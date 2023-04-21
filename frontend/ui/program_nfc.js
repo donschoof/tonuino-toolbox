@@ -13,7 +13,6 @@ let program_nfc = {
                 program_nfc: true,
                 buttons: ['Abbrechen', 'Programmieren']
             }, (response) => {
-
                 if(response.answer === 2) {
 
                     worker_api.command('serial_program_nfc_card', {
@@ -23,7 +22,7 @@ let program_nfc = {
                             mode: response.nfc_mode
                         },
                         success: (response) => {
-
+                            theapp.$btn_group_folder_opt.hide();
                         }
                     });
 

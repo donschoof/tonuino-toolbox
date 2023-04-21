@@ -170,6 +170,9 @@ let theapp = {
 
     setSerialPort: (serialPort) => {
         theapp.serialPort = serialPort;
+        if (theapp.folder){
+            folder_list.$btn_program_nfc.show();
+        }
     },
 
     reload: (callback) => {
@@ -216,7 +219,9 @@ let theapp = {
         if (folder) {
             theapp.$btn_group_right.show();
             folder_list.$btn_remove_folder.show();
-            folder_list.$btn_program_nfc.show();
+            if (theapp.serialPort){
+                folder_list.$btn_program_nfc.show();
+            }
         } else {
             theapp.$btn_group_right.hide();
             folder_list.$btn_remove_folder.hide();

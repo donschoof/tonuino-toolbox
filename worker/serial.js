@@ -16,15 +16,20 @@ let serial = {
         let parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
 
         let write_cmd = "write " + folder_name + " " + mode;
-        port.open();
+        await port.open(function (err){
+            if (err) {
+                return false;
+            }
+        });
 
         await logger.log("Writing to Serial: " + write_cmd);
 
-        port.write(write_cmd);
+        await port.write(write_cmd);
 
-        parser.on('data', function (data) {
+        await parser.on('data', function (data) {
             logger.log("SERIAL: " + data);
             if (data === "OK") {
+                logger.log("SERIAL OK, Close port")
                 port.close();
                 return true; //SUCCESS
             } else if (data === "ERROR"){
@@ -32,7 +37,7 @@ let serial = {
                 return false;
             }
         });
-
+    return false;
     }
 };
 
